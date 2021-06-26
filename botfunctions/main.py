@@ -1,1 +1,1 @@
-from 
+from newsgrabber import grabnews

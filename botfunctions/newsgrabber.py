@@ -26,12 +26,13 @@ def headlinegrabber(response_text):
         elif 37 > x > 31:
             x = x + 1
             print(headline.text)
+            print('')
 
 
 
-url = 'https://www.cbc.ca/news'
-response = requests.get(url)
-headlinegrabber(response.text)
+# url = 'https://www.cbc.ca/news'
+# response = requests.get(url)
+# headlinegrabber(response.text)
 
 
 

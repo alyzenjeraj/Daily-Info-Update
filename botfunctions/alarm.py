@@ -1,12 +1,13 @@
 from datetime import datetime
 timers = []
 def initTimer(minutes): #minutes = minutes from now
+    newMinutes = int(minutes)
     global timers
-    currentTimeHour = datetime.now().strftime("%H") #24 hour time
-    currentTimeMinute = datetime.now().strftime("%M")
-    hours = minutes // 60
-    minutes -= hours * 60
-    targetTimeMinute = currentTimeMinute + minutes
+    currentTimeHour = int(datetime.now().strftime("%H")) #24 hour time
+    currentTimeMinute = int(datetime.now().strftime("%M"))
+    hours = newMinutes // 60
+    newMinutes -= hours * 60
+    targetTimeMinute = currentTimeMinute + newMinutes
     if targetTimeMinute >= 60:
         targetTimeMinute -= 60
         hours += 1
@@ -14,7 +15,7 @@ def initTimer(minutes): #minutes = minutes from now
     if targetTimeHour >= 24:
         targetTimeHour -= 24
     targetTime = [targetTimeHour, targetTimeMinute]
-    timers.append(targetTime)
+    return(targetTime)
 
 def checkTime():
     global timers

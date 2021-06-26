@@ -1,6 +1,8 @@
 import requests
 import json
 from newsgrabber import headlinegrabber
+from alarm import initTimer
+from alarm import checkTime
 
 
 url = 'https://www.cbc.ca/news'

@@ -16,17 +16,29 @@ import requests
 import json
 
 
+
 def headlinegrabber(response_text):
     soup = BeautifulSoup(response_text, 'lxml')
-    headlines = soup.find_all('a')
-    x=0
+    headlines = soup.findAll(attrs={"class": "headline"})
+    x = 0
     for headline in headlines:
-        if x < 32:
-            x = x+1  
-        elif 37 > x > 31:
-            x = x + 1
+        if 0 < x < 6:
             print(headline.text)
-            print('')
+            x = x + 1
+        else:
+            x = x + 1
+
+# def headlinegrabber(response_text):
+#     soup = BeautifulSoup(response_text, 'lxml')
+#     headlines = soup.find_all('a')
+#     x=0
+#     for headline in headlines:
+#         if x < 32:
+#             x = x+1  
+#         elif 37 > x > 31:
+#             x = x + 1
+#             print(headline.text)
+#             print('')
 
 
 
